@@ -1,0 +1,9 @@
+apiVersion: v2
+name: streaming-tools
+description: A Helm chart for deploying streaming tools.
+type: application
+version: 1.0.0
+appVersion: 1.0.0
+maintainers:
+  - name: D-aemon
+    url: https://github.com/D-aemon/streaming-tools

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: backend
+spec:
+  serviceName: backend
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: your-repo/backend-app:latest
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: backend-config-volume
+        configMap:
+          name: backend-config
+          # Add other ConfigMap options here if needed
+  volumeClaimTemplates:
+  - metadata:
+      name: backend-persistent-storage
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
