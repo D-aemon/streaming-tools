@@ -1,0 +1,634 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "service.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "StreamingToolsService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/camera/delete": {
+      "post": {
+        "summary": "删除摄像头",
+        "operationId": "StreamingToolsService_DeleteCamera",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoDeleteCameraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/camera/list": {
+      "post": {
+        "summary": "列出摄像头",
+        "operationId": "StreamingToolsService_ListCamera",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoListCameraResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoListCameraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/camera/upsert": {
+      "post": {
+        "summary": "创建/更新摄像头",
+        "operationId": "StreamingToolsService_UpsertCamera",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoUpsertCameraRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_file/delete": {
+      "post": {
+        "summary": "删除媒体文件",
+        "operationId": "StreamingToolsService_DeleteMediaFile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoDeleteMediaFileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_file/list": {
+      "post": {
+        "summary": "列出媒体文件",
+        "operationId": "StreamingToolsService_ListMediaFile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoListMediaFileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoListMediaFileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_file/upsert": {
+      "post": {
+        "summary": "创建/更新媒体文件",
+        "operationId": "StreamingToolsService_UpsertMediaFile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoUpsertMediaFileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_source/delete": {
+      "post": {
+        "summary": "删除媒体源",
+        "operationId": "StreamingToolsService_DeleteMediaSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoDeleteMediaSourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_source/list": {
+      "post": {
+        "summary": "列出媒体源",
+        "operationId": "StreamingToolsService_ListMediaSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoListMediaSourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoListMediaSourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    },
+    "/v1/media_source/upsert": {
+      "post": {
+        "summary": "创建/更新媒体源",
+        "operationId": "StreamingToolsService_UpsertMediaSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoUpsertMediaSourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "StreamingToolsService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protoCamera": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "唯一标识"
+        },
+        "deviceName": {
+          "type": "string",
+          "title": "设备名称"
+        },
+        "username": {
+          "type": "string",
+          "title": "账号"
+        },
+        "passwd": {
+          "type": "string",
+          "title": "密码"
+        },
+        "url": {
+          "type": "string",
+          "title": "rtsp地址"
+        }
+      },
+      "title": "摄像头"
+    },
+    "protoDeleteCameraRequest": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "删除摄像头请求"
+    },
+    "protoDeleteMediaFileRequest": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "删除媒体文件"
+    },
+    "protoDeleteMediaSourceRequest": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "删除媒体源请求"
+    },
+    "protoListCameraRequest": {
+      "type": "object",
+      "properties": {
+        "deviceName": {
+          "type": "string",
+          "title": "设备名称"
+        },
+        "type": {
+          "type": "string",
+          "title": "TODO 类型 -- 后续优化为 enum 枚举"
+        },
+        "query": {
+          "$ref": "#/definitions/protoQuery",
+          "title": "基础查询"
+        }
+      },
+      "title": "列出摄像头请求"
+    },
+    "protoListCameraResponse": {
+      "type": "object",
+      "properties": {
+        "resp": {
+          "$ref": "#/definitions/protoResponse",
+          "title": "基础返回值"
+        },
+        "res": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoCamera"
+          },
+          "title": "返回查询结果"
+        }
+      },
+      "title": "列出摄像头返回"
+    },
+    "protoListMediaFileRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "名称"
+        },
+        "type": {
+          "type": "string",
+          "title": "TODO 类型 -- 后续优化为 enum 枚举"
+        },
+        "query": {
+          "$ref": "#/definitions/protoQuery",
+          "title": "基础查询"
+        }
+      },
+      "title": "列出媒体文件请求"
+    },
+    "protoListMediaFileResponse": {
+      "type": "object",
+      "properties": {
+        "resp": {
+          "$ref": "#/definitions/protoResponse",
+          "title": "基础返回值"
+        },
+        "res": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoMediaFile"
+          },
+          "title": "返回查询结果"
+        }
+      },
+      "title": "列出媒体文件返回"
+    },
+    "protoListMediaSourceRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "名称"
+        },
+        "type": {
+          "type": "string",
+          "title": "TODO 类型 -- 后续优化为 enum 枚举"
+        },
+        "query": {
+          "$ref": "#/definitions/protoQuery",
+          "title": "基础查询"
+        }
+      },
+      "title": "------ Request ------\n列出媒体源请求"
+    },
+    "protoListMediaSourceResponse": {
+      "type": "object",
+      "properties": {
+        "resp": {
+          "$ref": "#/definitions/protoResponse",
+          "title": "基础返回值"
+        },
+        "res": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoMediaSource"
+          },
+          "title": "返回查询结果"
+        }
+      },
+      "title": "------ Response ------\n列出媒体源返回"
+    },
+    "protoMediaFile": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "唯一标识"
+        },
+        "name": {
+          "type": "string",
+          "title": "文件名"
+        },
+        "type": {
+          "type": "string",
+          "title": "TODO 文件类型 -- 使用 enum 枚举"
+        },
+        "size": {
+          "type": "string",
+          "title": "文件大小"
+        },
+        "path": {
+          "type": "string",
+          "title": "文件存储路径"
+        },
+        "comment": {
+          "type": "string",
+          "title": "评述"
+        }
+      },
+      "title": "媒体文件"
+    },
+    "protoMediaSource": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string",
+          "title": "唯一标识"
+        },
+        "name": {
+          "type": "string",
+          "title": "名称"
+        },
+        "type": {
+          "type": "string",
+          "title": "TODO 类型 -- 使用 enum 枚举去 适配不同的数据源"
+        },
+        "url": {
+          "type": "string",
+          "title": "媒体源 URL"
+        }
+      },
+      "title": "媒体源"
+    },
+    "protoQuery": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "boolean",
+          "title": "是否排序"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "根据所选列排序"
+        },
+        "pageSize": {
+          "type": "string",
+          "title": "每页返回的数据量"
+        },
+        "offset": {
+          "type": "string",
+          "title": "偏移量"
+        },
+        "startAt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "起始时间戳"
+        },
+        "endAt": {
+          "type": "integer",
+          "format": "int32",
+          "title": "结束时间戳"
+        }
+      },
+      "title": "基础查询体"
+    },
+    "protoResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "title": "状态码"
+        },
+        "message": {
+          "type": "string",
+          "title": "返回消息"
+        }
+      },
+      "title": "基础返回值"
+    },
+    "protoUpsertCameraRequest": {
+      "type": "object",
+      "properties": {
+        "camera": {
+          "$ref": "#/definitions/protoCamera"
+        }
+      },
+      "title": "创建/更新摄像头"
+    },
+    "protoUpsertMediaFileRequest": {
+      "type": "object",
+      "properties": {
+        "mf": {
+          "$ref": "#/definitions/protoMediaFile"
+        }
+      },
+      "title": "创建/更新媒体文件"
+    },
+    "protoUpsertMediaSourceRequest": {
+      "type": "object",
+      "properties": {
+        "ms": {
+          "$ref": "#/definitions/protoMediaSource"
+        }
+      },
+      "title": "创建/更新媒体源"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
