@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./;proto";
+
+import "utils.proto";
+import "domain.proto";
+
+
+// ------ Request ------
+// 列出媒体源请求
+message ListMediaSourceRequest {
+  // 名称
+  string name = 1;
+  // TODO 类型 -- 后续优化为 enum 枚举
+  string type = 2;
+  // 基础查询
+  Query query = 3;
+}
+
+// 创建/更新媒体源
+message UpsertMediaSourceRequest {
+  MediaSource ms = 1;
+}
+
+// 删除媒体源请求
+message DeleteMediaSourceRequest {
+  string uuid = 1;
+}
+
+// 列出摄像头请求
+message ListCameraRequest {
+  // 设备名称
+  string device_name = 1;
+  // TODO 类型 -- 后续优化为 enum 枚举
+  string type = 2;
+  // 基础查询
+  Query query = 3;
+}
+
+// 创建/更新摄像头
+message UpsertCameraRequest {
+  Camera camera = 1;
+}
+
+// 删除摄像头请求
+message DeleteCameraRequest {
+  string uuid = 1;
+}
+
+// 列出媒体文件请求
+message ListMediaFileRequest {
+  // 名称
+  string name = 1;
+  // TODO 类型 -- 后续优化为 enum 枚举
+  string type = 2;
+  // 基础查询
+  Query query = 3;
+}
+
+// 创建/更新媒体文件
+message UpsertMediaFileRequest {
+  MediaFile mf = 1;
+}
+
+// 删除媒体文件
+message DeleteMediaFileRequest {
+  string uuid = 1;
+}
+
+// ------ Response ------
+// 列出媒体源返回
+message ListMediaSourceResponse {
+  // 基础返回值
+  Response resp = 1;
+  // 返回查询结果
+  repeated MediaSource res = 2;
+}
+
+// 列出摄像头返回
+message ListCameraResponse {
+  // 基础返回值
+  Response resp = 1;
+  // 返回查询结果
+  repeated Camera res = 2;
+}
+
+// 列出媒体文件返回
+message ListMediaFileResponse {
+  // 基础返回值
+  Response resp = 1;
+  // 返回查询结果
+  repeated MediaFile res = 2;
+}

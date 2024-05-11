@@ -1,0 +1,47 @@
+// streaming tools 的实体对象由 媒体源、摄像头、媒体文件 组成
+syntax = "proto3";
+
+package proto;
+option go_package = "./;proto";
+
+// 媒体源
+message MediaSource {
+  // 唯一标识
+  string uuid = 1;
+  // 名称
+  string name = 2;
+  // TODO 类型 -- 使用 enum 枚举去 适配不同的数据源
+  string type = 3;
+  // 媒体源 URL
+  string url = 4;
+}
+
+// 摄像头
+message Camera {
+  // 唯一标识
+  string uuid = 1;
+  // 设备名称
+  string device_name = 2;
+  // 账号
+  string username = 3;
+  // 密码
+  string passwd = 4;
+  // rtsp地址
+  string url = 5;
+}
+
+// 媒体文件
+message MediaFile {
+  // 唯一标识
+  string uuid = 1;
+  // 文件名
+  string name = 2;
+  // TODO 文件类型 -- 使用 enum 枚举
+  string type = 3;
+  // 文件大小
+  string size = 4;
+  // 文件存储路径
+  string path = 5;
+  // 评述
+  string comment = 6;
+}

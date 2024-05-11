@@ -15,7 +15,7 @@ type DB struct {
 	sqlDB *sql.DB
 }
 
-// connect to mysql
+// Connect connect to mysql
 func Connect(cfg env.DBConfig) (db DB, err error) {
 	db.DB, err = gorm.Open(mysql.New(mysql.Config{
 		DSN: fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
@@ -45,7 +45,11 @@ func (db DB) AutoMigrateAllTables() error {
 
 func (db DB) withTransaction(f func(DB) error) error {
 	return db.Transaction(func(tx *gorm.DB) error {
-		db.DB = tx // db is a copied value, so change db.DB have no side-effect
+		db.DB = tx // db is a copied value, so change db.DB have no side effect
 		return f(db)
 	})
+}
+
+type aa struct {
+	gorm.Model
 }

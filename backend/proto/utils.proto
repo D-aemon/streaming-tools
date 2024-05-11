@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./;proto";
+
+message Empty {}
+
+// 基础返回值
+message Response {
+  // 状态码
+  int32 code = 1;
+  // 返回消息
+  string message = 2;
+}
+
+// 基础查询体
+message Query {
+  // 是否排序
+  bool order = 3;
+  // 根据所选列排序
+  string order_by = 4;
+  // 每页返回的数据量
+  string page_size = 5;
+  // 偏移量
+  string offset = 6;
+  // 起始时间戳
+  int32 start_at = 7;
+  // 结束时间戳
+  int32 end_at = 8;
+}
