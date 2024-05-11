@@ -3,5 +3,4 @@
 .vscode
 images/
 .tar
-./proto/*.go
-./proto/*.json
+/backend/proto/*.json
