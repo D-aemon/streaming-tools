@@ -1,17 +1,17 @@
-package log
+package logger
 
 import (
+	"backend/env"
 	"fmt"
 	"log/slog"
 	"os"
 	"strconv"
 )
 
-func init() {
+func InitSlog(config env.LogConfig) {
 	var lvl slog.LevelVar
 
-	logLevel := os.Getenv("LOG_LEVEL")
-	level, _ := strconv.Atoi(logLevel)
+	level, _ := strconv.Atoi(config.Level)
 
 	lvl.Set(slog.Level(level))
 	opts := slog.HandlerOptions{

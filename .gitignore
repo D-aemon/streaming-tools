@@ -4,3 +4,4 @@
 images/
 .tar
 /backend/proto/*.json
+/backend/proto/*.go

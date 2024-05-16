@@ -30,6 +30,10 @@ func Connect(cfg env.DBConfig) (db DB, err error) {
 		return
 	}
 	err = db.sqlDB.Ping()
+	if err != nil {
+		return
+	}
+	err = db.AutoMigrateAllTables()
 	return
 }
 
@@ -39,7 +43,9 @@ func (db DB) Close() (err error) {
 
 func (db DB) AutoMigrateAllTables() error {
 	return db.AutoMigrate(
-		new(Streaming),
+		new(MediaSource),
+		new(MediaFile),
+		new(Camera),
 	)
 }
 
@@ -48,8 +54,4 @@ func (db DB) withTransaction(f func(DB) error) error {
 		db.DB = tx // db is a copied value, so change db.DB have no side effect
 		return f(db)
 	})
-}
-
-type aa struct {
-	gorm.Model
 }

@@ -7,7 +7,7 @@ option go_package = "./;proto";
 // 媒体源
 message MediaSource {
   // 唯一标识
-  string uuid = 1;
+  uint32 uuid = 1;
   // 名称
   string name = 2;
   // TODO 类型 -- 使用 enum 枚举去 适配不同的数据源
@@ -19,7 +19,7 @@ message MediaSource {
 // 摄像头
 message Camera {
   // 唯一标识
-  string uuid = 1;
+  uint32 uuid = 1;
   // 设备名称
   string device_name = 2;
   // 账号
@@ -33,7 +33,7 @@ message Camera {
 // 媒体文件
 message MediaFile {
   // 唯一标识
-  string uuid = 1;
+  uint32 uuid = 1;
   // 文件名
   string name = 2;
   // TODO 文件类型 -- 使用 enum 枚举

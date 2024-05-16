@@ -1,17 +1,16 @@
-
-
-
-modules:
-  - frontend:
-      enabled: true
-      image:
-        repository: your-repo/frontend-app
-        tag: v1.0.0
-        pullPolicy: IfNotPresent
-      resources:
-        cpu: "300m"
-        memory: "512Mi"
-      service:
-        type: ClusterIP
-        port: 80
+mysql:
+  enable: true
+  password: "Ab123456"
+  qkd_dump_file: "config/dump.sql"
+  image: mysql:8.0.26
+  service:
+    type: NodePort ## 不需要暴露时，需要将该配置置空
+    nodePort: 32667
+  resources:
+    limits:
+      cpu: 1
+      memory: 2Gi
+    requests:
+      cpu: 1
+      memory: 2Gi
   

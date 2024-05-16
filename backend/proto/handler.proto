@@ -25,7 +25,7 @@ message UpsertMediaSourceRequest {
 
 // 删除媒体源请求
 message DeleteMediaSourceRequest {
-  string uuid = 1;
+  uint32 uuid = 1;
 }
 
 // 列出摄像头请求
@@ -45,7 +45,7 @@ message UpsertCameraRequest {
 
 // 删除摄像头请求
 message DeleteCameraRequest {
-  string uuid = 1;
+  uint32 uuid = 1;
 }
 
 // 列出媒体文件请求
@@ -65,7 +65,7 @@ message UpsertMediaFileRequest {
 
 // 删除媒体文件
 message DeleteMediaFileRequest {
-  string uuid = 1;
+  uint32 uuid = 1;
 }
 
 // ------ Response ------
